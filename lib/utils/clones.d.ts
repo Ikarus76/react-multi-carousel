@@ -1,0 +1,23 @@
+import { CarouselInternalState, CarouselProps } from "../types";
+declare function getOriginalCounterPart(index: number, { slidesToShow, currentSlide }: {
+    slidesToShow: number;
+    currentSlide: number;
+    totalItems: number;
+}, childrenArr: any[]): number;
+declare function getCloneCounterPart(index: number, { slidesToShow }: {
+    slidesToShow: number;
+    currentSlide: number;
+    totalItems: number;
+}, childrenArr: any[]): number | undefined;
+declare function getClones(slidesToShow: number, childrenArr: any[]): {
+    clones: any[];
+    initialSlide: number;
+    k: number;
+};
+declare function checkClonesPosition({ currentSlide, slidesToShow, itemWidth, totalItems }: CarouselInternalState, childrenArr: any[], props: CarouselProps): {
+    isReachingTheEnd: boolean;
+    isReachingTheStart: boolean;
+    nextSlide: number;
+    nextPosition: number;
+};
+export { getOriginalCounterPart, getCloneCounterPart, getClones, checkClonesPosition };
